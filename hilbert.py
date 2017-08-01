@@ -18,7 +18,7 @@ def hilbert(x):
 
 	N = len(x)
 
-	if N%2 == 0: N -= 1
+	if N%2 != 0: N -= 1
 
 	cot = lambda theta: 1 / tan(theta)
 	h = lambda n: (2/N) * cot(n*pi/N) * (sin(n*pi/2)**2) if n != 0 else 0
@@ -29,28 +29,4 @@ def hilbert(x):
 		for m in np.arange(N):
 			y[i] += h(i-m)*x[m]
 
-	print(y)
-
-	return y
-
-
-if __name__ == '__main__':
-	# x = np.random.rand(100)
-	x = 4*pi*np.arange(100)/100
-
-	# print((hilbert(x) - scipy_hilbert(x))/scipy_hilbert(x))
-
-	plt.figure()
-	# u = np.imag(hilbert(cos(x)))
-	u = hilbert(cos(x))
-
-	print(hilbert(cos(x)))
-
-	plt.plot(u, 'b', label='H')
-	plt.plot(np.imag(scipy_hilbert(cos(x))), 'k', label='H')
-	plt.plot(sin(x), '--r', label='sin')
-	plt.ylim(-1, 1)
-
-	# print((np.imag(hilbert(cos(x))) - sin(x)) / sin(x))
-
-	plt.show()
+	return x + 1j*y
