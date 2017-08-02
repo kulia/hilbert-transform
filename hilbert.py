@@ -28,7 +28,6 @@ def hilbert(x):
 	y = np.convolve(x[:N], h, mode='valid')
 
 	if len(y) != len(x):
-		print('Hello!')
 		y = y[1:]
 
 	return x + 1j*y
