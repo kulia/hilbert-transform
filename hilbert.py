@@ -2,7 +2,7 @@ import numpy as np
 import matplotlib.pylab as plt
 
 from scipy.signal import hilbert as scipy_hilbert
-from numpy import sin, cos, tan, pi
+from numpy import sin, tan, pi
 
 
 def hilbert(x):
