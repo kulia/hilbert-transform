@@ -18,15 +18,18 @@ def hilbert(x):
 
 	N = len(x)
 
-	if N%2 != 0: N -= 1
+	# Ensure even N
+	if N%2 != 0: N += 1
 
 	cot = lambda theta: 1 / tan(theta)
-	h = lambda n: (2/N) * cot(n*pi/N) * (sin(n*pi/2)**2) if n != 0 else 0
 
-	y = np.zeros(len(x))
+	n = np.arange(2*N)
+	h =  (2/N) * cot(n*pi/N) * (sin(n*pi/2)**2)
 
-	for i in np.arange(len(x)):
-		for m in np.arange(N):
-			y[i] += h(i-m)*x[m]
+	y = np.convolve(x[:N], h, mode='valid')
 
-	return x + 1j*y
+	if len(y) != len(x):
+		print('Hello!')
+		y = y[1:]
+
+	return x+1j*y
