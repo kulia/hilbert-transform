@@ -18,8 +18,7 @@ def hilbert(x):
 
 	N = len(x)
 
-	# Ensure even N
-	if N%2 != 0: N += 1
+	if N%2 != 0: N += 1	# Ensure even N
 
 	cot = lambda theta: 1 / tan(theta)
 
@@ -32,4 +31,4 @@ def hilbert(x):
 		print('Hello!')
 		y = y[1:]
 
-	return x+1j*y
+	return x + 1j*y
