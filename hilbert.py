@@ -3,7 +3,7 @@ from numpy import sin, tan, pi
 
 def hilbert(x):
 	"""
-	Compute the analytic signal, using the Hilbert transform with Hanh's method [1].
+	Compute the analytic signal of x using the discrete Hilbert transform with Hanh's method [1].
 
 	[1] S. Hanh, Hilbert Transform in Signal Processing, Artech House, Boston 1996
 
