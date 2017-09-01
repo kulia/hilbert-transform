@@ -15,7 +15,7 @@ def hilbert(x):
 	[1] S. Hanh, Hilbert Transform in Signal Processing, Artech House, Boston 1996
 
 	:param x: array_like
-	:return xa: ndarray
+	:return z: ndarray
 			Analytic signal of x
 	"""
 
