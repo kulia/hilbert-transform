@@ -14,7 +14,9 @@ def hilbert(x):
 
 	N = len(x)
 
-	cot = lambda theta: 1 / tan(theta)
+	np.seterr(divide='ignore')
+
+	cot = lambda theta: np.nan_to_num(1 / tan(theta))
 
 	n = np.arange(2*N)
 	h =  (2/N) * cot(n*pi/N) * (sin(n*pi/2)**2)
