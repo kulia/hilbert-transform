@@ -1,3 +1,4 @@
+import sys
 import numpy as np
 from numpy import sin, tan, pi
 
@@ -31,3 +32,6 @@ def hilbert(x):
 	y = np.convolve(x, h, mode='valid')
 
 	return x + 1j*y[-len(x):]
+
+
+sys.modules[__name__] = hilbert

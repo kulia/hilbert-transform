@@ -1,7 +1,7 @@
 import unittest
 import numpy as np
 from numpy.linalg import norm
-from hilbert import hilbert
+import hilbert
 
 from scipy.signal import hilbert as scipy_hilbert
 
