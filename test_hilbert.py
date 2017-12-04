@@ -31,5 +31,6 @@ class TestHilbert(unittest.TestCase):
 		''' Allow small error '''
 		self.assertTrue(norm(h_1-h_2), 1e-6)
 
+
 if __name__ == '__main__':
 	unittest.main()
