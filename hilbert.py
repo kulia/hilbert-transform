@@ -4,7 +4,7 @@ from numpy import sin, tan, pi
 
 def hilbert(x):
 	"""
-	Compute the analytic signal of :math:`x(t)` using the discrete Hilbert transform with Hanh's method [1].
+	IIR filter to compute the analytic signal of :math:`x(t)` using the discrete Hilbert transform with Hanh's method [1].
 	
 	The analytic signal is given by
 	:math:`z(t) = x(t) + j\\frac{PV}{\pi} \\int_{-\\inft}^{\\inft} \\frac{x(t)}{t-\\tau}`
